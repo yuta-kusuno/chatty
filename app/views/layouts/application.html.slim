@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | ChatApp
+      | チャットルーム
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -10,4 +10,5 @@ html
   body
     p.notice =notice
     p.alert =alert
+    = render 'rooms/header'
     = yield
