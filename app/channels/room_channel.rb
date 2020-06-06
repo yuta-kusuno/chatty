@@ -1,6 +1,6 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    # binding.pry
+    stream_from "room_channel"
     # stream_from "some_channel"
   end
 

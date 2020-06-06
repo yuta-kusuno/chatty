@@ -2,7 +2,6 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create("RoomChannel", {
   connected() {
-    console.log(1)
     // Called when the subscription is ready for use on the server
   },
 
@@ -18,4 +17,16 @@ consumer.subscriptions.create("RoomChannel", {
   speak: function() {
     return this.perform('speak', {massage: 'aaaaaaaaaaaa'});
   }
+});
+
+let chatInput;
+let inputData;
+let content;
+
+document.addEventListener('DOMContentLoaded', function () {
+  chatInput = document.getElementById('chatInput');
+  inputData = document.getElementById('inputData');
+  inputData.addEventListener('click', function() {
+    content = inputData.value
+  });
 });
