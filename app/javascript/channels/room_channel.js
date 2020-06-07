@@ -15,18 +15,18 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
   speak: function() {
-    return this.perform('speak', {massage: 'aaaaaaaaaaaa'});
+    return this.perform('speak');
   }
 });
 
-let chatInput;
-let inputData;
-let content;
+// let chatInput;
+// let inputData;
+// let content;
 
-document.addEventListener('DOMContentLoaded', function () {
-  chatInput = document.getElementById('chatInput');
-  inputData = document.getElementById('inputData');
-  inputData.addEventListener('click', function() {
-    content = inputData.value
-  });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//   chatInput = document.getElementById('chatInput');
+//   inputData = document.getElementById('inputData');
+//   inputData.addEventListener('click', function() {
+//     content = inputData.value
+//   });
+// });
