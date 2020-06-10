@@ -1,7 +1,9 @@
 import consumer from "./consumer"
 
+let messageList;
+
 document.addEventListener('turbolinks:load', () => {
-  window.messageList = document.getElementById('messageList')
+  messageList = document.getElementById('messageList')
 
   if (messageList === null) {
     return
