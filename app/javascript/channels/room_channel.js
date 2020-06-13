@@ -18,7 +18,6 @@ document.addEventListener('turbolinks:load', () => {
     },
   
     received(data) {
-      // alert(data.content)
       // Called when there's incoming data on the websocket for this channel
       messageList.insertAdjacentHTML('beforeend', data['message'])
     }
