@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
-  
+  # before_action :authenticate_user!
+
   def show
-    @messages=Message.includes(:user).order(:id)
-    @message=current_user.messages.new
+    @messages = Message.all
   end
 end

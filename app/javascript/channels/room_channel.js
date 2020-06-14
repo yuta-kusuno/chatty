@@ -1,28 +1,20 @@
 import consumer from "./consumer"
 
-let messageList;
+consumer.subscriptions.create("RoomChannel", {
+  connected() {
+    // Called when the subscription is ready for use on the server
+  },
 
-document.addEventListener('turbolinks:load', () => {
-  messageList = document.getElementById('messageList')
+  disconnected() {
+    // Called when the subscription has been terminated by the server
+  },
 
-  if (messageList === null) {
-    return
+  received(data) {
+    // Called when there's incoming data on the websocket for this channel
+
+  },
+
+  speak: function() {
+    return this.perform('speak');
   }
-  consumer.subscriptions.create("RoomChannel", {
-    connected() {
-      // Called when the subscription is ready for use on the server
-    },
-  
-    disconnected() {
-      // Called when the subscription has been terminated by the server
-    },
-  
-    received(data) {
-      // Called when there's incoming data on the websocket for this channel
-      messageList.insertAdjacentHTML('beforeend', data['message'])
-    }
-  });
 });
-// speak: function() {
-//   return this.perform('speak');
-// }
