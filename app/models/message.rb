@@ -3,7 +3,5 @@ class Message < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: {maximum: 500}
 
-  def template
-    ApplicationController.renderer.render partial: 'messages/message', locals: { message: self }
-  end
+  after_create_commit {MessageBroadcastJob.perform_later self}
 end
