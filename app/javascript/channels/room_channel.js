@@ -11,7 +11,8 @@ const chatChannel = consumer.subscriptions.create("RoomChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    return alert(data['message']);
+    return $('#messages').append(data['message']);
+    // return alert(data['message']);
   },
 
   speak: function(message) {

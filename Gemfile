@@ -25,6 +25,7 @@ gem 'pry-rails'
 
 gem 'slim-rails'
 gem 'html2slim'
+gem 'rails-i18n'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
