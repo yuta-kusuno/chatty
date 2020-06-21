@@ -12,7 +12,6 @@ const chatChannel = consumer.subscriptions.create("RoomChannel", {
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
     return $('#messages').append(data['message']);
-    // return alert(data['message']);
   },
 
   speak: function(message) {
@@ -26,7 +25,7 @@ $(document).on('keypress', '[data-behavior~=room_speaker]', function(event) {
   if (event.keyCode === 13) {
     chatChannel.speak(event.target.value);
     event.target.value = '';
-    // eventになにが入る？preventDefaultで何を妨害する？
+    // eventにはenterが入る。speakに引数を渡したらeventをキャンセル。なぜ？
     return event.preventDefault();
   }
 });
