@@ -1,6 +1,7 @@
 h1 チャットルーム
 #messages
   = render @messages
+/ #messages data-room-id="#{@room.id}"
 
 = label_tag :content, 'メッセージを送信'
 = text_field_tag :content, nil, data: { behavior: 'room_speaker' }
